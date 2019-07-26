@@ -1,7 +1,7 @@
 Package: bolasso
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person(given = "David",
            family = "Masip",
            role = c("aut", "cre"),
@@ -11,11 +11,13 @@ Description: What the package does (one paragraph).
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
     hardhat,
     rlang,
-    stats
-Suggests: 
+    stats,
+    glmnet,
+    rsample
+Suggests:
     recipes
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0

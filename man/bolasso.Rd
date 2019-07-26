@@ -79,6 +79,6 @@ mod3 <- bolasso(rec, mtcars)
 
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (YOUR-ORCID-ID)
+\strong{Maintainer}: David Masip \email{david26694@gmail.com} (YOUR-ORCID-ID)
 
 }

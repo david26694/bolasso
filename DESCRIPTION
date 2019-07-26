@@ -1,14 +1,13 @@
 Package: bolasso
-Title: What the Package Does (One Line, Title Case)
+Title: Bolasso
 Version: 0.0.0.9000
 Authors@R:
     person(given = "David",
            family = "Masip",
            role = c("aut", "cre"),
-           email = "david26694@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "david26694@gmail.com")
+Description: Variable selection via bolasso algorithm
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Imports:

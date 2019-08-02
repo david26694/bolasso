@@ -24,6 +24,7 @@ bolasso_bridge <- function(processed, ...) {
   new_bolasso(
     df_coefs = fit$df_coefs,
     ridge_coefs = fit$ridge_coefs,
+    threshold_selection = fit$threshold_selection,
     blueprint = processed$blueprint
   )
 }

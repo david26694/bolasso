@@ -55,7 +55,7 @@ A \code{bolasso} object.
 }
 \description{
 This package provides implementation of bolasso to select variables.
-This is done via bootsrapping the training set and running a lasso in every bootstrap sample
+This is done via bootsrapping the training set and running a lasso in every bootstrap sample.
 Then, only variables that appear in most of the bootstrap samples are selected and a ridge
 is trained with those variables
 
@@ -79,6 +79,6 @@ mod3 <- bolasso(rec, mtcars)
 
 }
 \author{
-\strong{Maintainer}: David Masip \email{david26694@gmail.com} (YOUR-ORCID-ID)
+\strong{Maintainer}: David Masip \email{david26694@gmail.com}
 
 }

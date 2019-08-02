@@ -33,7 +33,8 @@ bolasso_impl <- function(predictors, outcome, n_bootsraps = 100, threshold_selec
   # Return bolasso coefficients for analysis and ridge coefficients
   list(
     df_coefs = selected_features_df,
-    ridge_coefs = ridge_coefs
+    ridge_coefs = ridge_coefs,
+    threshold_selection = threshold_selection
     )
 
 }
@@ -91,7 +92,7 @@ train_ridge <- function(full_data, selected_features_df, threshold_selection, la
 
 apply_feature_selection <- function(boot_split, lambda_min = T, ...){
 
-  df <- analysis(boot_split)
+  df <- rsample::analysis(boot_split)
 
   outcome <- pull(df, outcome)
   predictors <- as.matrix(select(df, -outcome))

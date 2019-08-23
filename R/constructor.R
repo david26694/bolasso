@@ -33,7 +33,7 @@ new_bolasso <- function(df_coefs, ridge_coefs, threshold_selection, blueprint) {
 #' outcome <- mtcars[, "vs"]
 #'
 #'
-#' mod <- bolasso(predictors, outcome, n_bootsraps = 10)
+#' mod <- bolasso(predictors, outcome, n_bootstraps = 10)
 #'
 #' summary(mod)
 #'
@@ -51,7 +51,7 @@ summary.bolasso <- function(model){
     arrange(desc(selection_ratio))
 
   summary_bolasso <- selection_rates %>%
-    left_join(ridge_coefficients) %>%
+    left_join(ridge_coefficients, by = 'feature') %>%
     # If it doesn't appear in ridge, it is not selected
     mutate(selected_bolasso = coalesce(selected_bolasso, F))
 
@@ -82,7 +82,7 @@ summary.bolasso <- function(model){
 #' outcome <- mtcars[, "vs"]
 #'
 #'
-#' mod <- bolasso(predictors, outcome, n_bootsraps = 50)
+#' mod <- bolasso(predictors, outcome, n_bootstraps = 50)
 #'
 #' ggplot(mod)
 #' ggplot(mod, threshold_selection = 0.8)
@@ -94,11 +94,11 @@ ggplot.bolasso <- function(model, threshold_selection = NULL){
   # If a threshold is not provided, we use the one provided in the constructor
   # and used to select variables
   if(is.null(threshold_selection)){
-    threshold_selection <- mod$threshold_selection
+    threshold_selection <- model$threshold_selection
   }
 
   # Only take variables whose selection rate is above threshold_selection
-  filter_variables <- mod$df_coefs %>%
+  filter_variables <- model$df_coefs %>%
     group_by(feature) %>%
     mutate(
       ratio_selection = sum(selected)/n()

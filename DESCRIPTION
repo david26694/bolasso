@@ -16,7 +16,8 @@ Imports:
     stats,
     glmnet,
     rsample,
-    dplyr
+    dplyr,
+    ggplot2
 Suggests:
     recipes
 Roxygen: list(markdown = TRUE)

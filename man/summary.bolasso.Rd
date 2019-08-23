@@ -28,7 +28,7 @@ predictors <- mtcars[,c("mpg", "disp", "hp", "drat", "wt")]
 outcome <- mtcars[, "vs"]
 
 
-mod <- bolasso(predictors, outcome, n_bootsraps = 10)
+mod <- bolasso(predictors, outcome, n_bootstraps = 10)
 
 summary(mod)
 

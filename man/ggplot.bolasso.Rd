@@ -27,7 +27,7 @@ predictors <- mtcars[,c("mpg", "disp", "hp", "drat", "wt")]
 outcome <- mtcars[, "vs"]
 
 
-mod <- bolasso(predictors, outcome, n_bootsraps = 50)
+mod <- bolasso(predictors, outcome, n_bootstraps = 50)
 
 ggplot(mod)
 ggplot(mod, threshold_selection = 0.8)

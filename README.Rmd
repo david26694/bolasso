@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# bolasso
+
+The goal of bolasso is to apply robust feature selection via lasso and bootsrtapping.
+
+## Installation
+
+You can install bolasso from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("david26694/bolasso")
+```
+
+## Example
+
+This is a basic example which shows you how to apply bolasso in a regression setting:
+
+```{r example}
+## basic example code
+library(bolasso)
+
+# We want to predict vs with the other mtcars variables
+predictors <- mtcars[,c("mpg", "disp", "hp", "drat", "wt")]
+outcome <- mtcars[, "vs"]
+
+# Apply bolasso with 10 bootstrap samples
+model <- bolasso(predictors, outcome, n_bootstraps = 10)
+
+# Show variable selection results
+summary(model)
+
+# It can also run on recipes, and with formulas
+library(recipes)
+rec <- recipe(mpg ~ ., mtcars)
+rec <- step_log(rec, disp)
+model_rec <- bolasso(rec, mtcars, n_bootstraps = 20)
+
+summary(model_rec)
+
+# It has different types of prediction, like numeric, class and prob
+predict(model_rec, mtcars, type = 'numeric')
+
+```

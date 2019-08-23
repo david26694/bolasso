@@ -25,7 +25,7 @@
 #' @param formula A formula specifying the outcome terms on the left-hand side,
 #' and the predictor terms on the right-hand side.
 #'
-#' @param ... Most importantly, n_bootsraps, threshold_selection, and ... of cv.glmnet.
+#' @param ... Most importantly, n_bootstraps, threshold_selection, and ... of cv.glmnet.
 #'
 #' @return
 #'

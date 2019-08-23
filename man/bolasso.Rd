@@ -32,7 +32,7 @@ bolasso(x, ...)
 created from \code{\link[recipes:recipe]{recipes::recipe()}}.
 }}
 
-\item{...}{Most importantly, n_bootsraps, threshold_selection, and ... of cv.glmnet.}
+\item{...}{Most importantly, n_bootstraps, threshold_selection, and ... of cv.glmnet.}
 
 \item{y}{When \code{x} is a \strong{data frame} or \strong{matrix}, \code{y} is the outcome
 specified as:

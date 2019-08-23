@@ -4,7 +4,7 @@
 \alias{bolasso_impl}
 \title{Low level bolasso implementation}
 \usage{
-bolasso_impl(predictors, outcome, n_bootsraps = 100,
+bolasso_impl(predictors, outcome, n_bootstraps = 100,
   threshold_selection = 0.5, ...)
 }
 \arguments{

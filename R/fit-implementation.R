@@ -16,11 +16,11 @@
 #' @importFrom glmnet cv.glmnet
 #'
 #' @keywords internal
-bolasso_impl <- function(predictors, outcome, n_bootsraps = 100, threshold_selection = 0.5, ...) {
+bolasso_impl <- function(predictors, outcome, n_bootstraps = 100, threshold_selection = 0.5, ...) {
 
   # Take all data to build samples with rsample
   full_data <- cbind(predictors, outcome)
-  boots_samples <- rsample::bootstraps(full_data, times = n_bootsraps)
+  boots_samples <- rsample::bootstraps(full_data, times = n_bootstraps)
 
 
   # Use bootstrap samples to select features with bolasso

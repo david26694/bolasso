@@ -51,6 +51,21 @@ train_ridge <- function(full_data, selected_features_df, threshold_selection, la
     ungroup() %>%
     pull(feature)
 
+  # If a feature has both positive and negative signs, we don't select it
+  features_signs <- selected_features_df %>%
+    group_by(feature) %>%
+    summarise(
+      any_pos = any(value > 0),
+      any_neg = any(value < 0)
+      )
+
+  change_sign_features <- features_signs %>%
+    filter(any_pos, any_neg) %>%
+    pull(feature)
+
+  # This is the final set of features
+  selected_features <- selected_features %>% setdiff(change_sign_features)
+
   # Obtain outcome and selected features
   outcome <- pull(full_data, outcome)
   predictors <- as.matrix(select(full_data, selected_features))

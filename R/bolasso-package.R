@@ -9,6 +9,7 @@
 #'
 #' @docType package
 #' @name bolasso
+#' @import dplyr
 "_PACKAGE"
 
 # The following block is used by usethis to automatically manage

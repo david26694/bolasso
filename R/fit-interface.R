@@ -30,7 +30,7 @@
 #' A `bolasso` object.
 #'
 #' @examples
-#' predictors <- mtcars[,c("mpg", "disp", "hp")]
+#' predictors <- mtcars[,c("mpg", "disp", "hp", "drat", "wt")]
 #' outcome <- mtcars[, "vs"]
 #'
 #' # XY interface

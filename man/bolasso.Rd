@@ -32,7 +32,7 @@ bolasso(x, ...)
 created from \code{\link[recipes:recipe]{recipes::recipe()}}.
 }}
 
-\item{...}{Not currently used, but required for extensibility.}
+\item{...}{Most importantly, n_bootsraps, threshold_selection, and ... of cv.glmnet.}
 
 \item{y}{When \code{x} is a \strong{data frame} or \strong{matrix}, \code{y} is the outcome
 specified as:
@@ -59,7 +59,9 @@ This is done via bootsrapping the training set and running a lasso in every boot
 Then, only variables that appear in most of the bootstrap samples are selected and a ridge
 is trained with those variables
 
-\code{bolasso()} fits a model.
+\code{bolasso()} applies bolasso to dataset. Bolasso is a feature selection technique
+that applies lasso for feature to different bootstrap samples of the dataset, and
+then keeps the features that are selection most of the time.
 }
 \examples{
 predictors <- mtcars[,c("mpg", "disp", "hp", "drat", "wt")]

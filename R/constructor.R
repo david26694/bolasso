@@ -13,17 +13,19 @@ new_bolasso <- function(df_coefs, ridge_coefs, threshold_selection, blueprint) {
 #'
 #' The summary of a bolasso is structured as a `tbl`.
 #' Every row of the `tbl` represents a feature and it always has 4 columns:
-#'     * feature: name of the feature
-#'     * selection_ratio: proportion of the times that the feature is selected
-#'     * selected_bolasso: TRUE if selected_ratio is large enough for the feature to be selected
-#'     * coefficient: Coefficient in ridge regression trained afterwards
+#'  \itemize{
+#'   \item feature: name of the feature
+#'   \item selection_ratio: proportion of the times that the feature is selected
+#'   \item selected_bolasso: TRUE if selected_ratio is large enough for the feature to be selected
+#'   \item coefficient: Coefficient in ridge regression trained afterwards
+#'  }
 #'
 #' @param model `bolasso` object to summarise
 #'
 #'
 #' @return
 #'
-#' A `tbl`.
+#' A `tbl` with summary information of a `bolasso` object.
 #'
 #' @examples
 #'
@@ -72,7 +74,7 @@ summary.bolasso <- function(model){
 #'
 #' @return
 #'
-#' A `tbl`.
+#' A `ggplot` object, faceted and with the distribution of each variable in it.
 #'
 #' @examples
 #'

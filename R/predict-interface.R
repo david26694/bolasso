@@ -7,9 +7,12 @@
 #' @param type A single character. The type of predictions to generate.
 #' Valid options are:
 #'
-#' - `"numeric"` for numeric predictions.
+#' - `"numeric"` for numeric predictions (output of X*beta).
+#' - `"link"` same as numeric.
+#' - `"prob"` for probabilities (apply logit transformation to link).
+#' - `"class"` for classes (based on threshold class is set to 0 or 1).
 #'
-#' @param ... Not used, but required for extensibility.
+#' @param ... Used to pass threshold when using class predictions.
 #'
 #' @return
 #'

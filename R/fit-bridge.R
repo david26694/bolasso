@@ -16,7 +16,6 @@ bolasso_bridge <- function(processed, ...) {
   predictors <- processed$predictors
   hardhat::validate_predictors_are_numeric(predictors)
 
-  # Outcome work
   outcome <- processed$outcomes[[1]]
 
   fit <- bolasso_impl(predictors, outcome, ...)

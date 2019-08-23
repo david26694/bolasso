@@ -14,10 +14,13 @@
 \item{type}{A single character. The type of predictions to generate.
 Valid options are:
 \itemize{
-\item \code{"numeric"} for numeric predictions.
+\item \code{"numeric"} for numeric predictions (output of X*beta).
+\item \code{"link"} same as numeric.
+\item \code{"prob"} for probabilities (apply logit transformation to link).
+\item \code{"class"} for classes (based on threshold class is set to 0 or 1).
 }}
 
-\item{...}{Not used, but required for extensibility.}
+\item{...}{Used to pass threshold when using class predictions.}
 }
 \value{
 A tibble of predictions. The number of rows in the tibble is guaranteed

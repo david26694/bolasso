@@ -13,7 +13,7 @@ ggplot.bolasso(model, threshold_selection = NULL)
 are plotted. We can set this value to lower or higher to plot more or less variables.}
 }
 \value{
-A \code{tbl}.
+A \code{ggplot} object, faceted and with the distribution of each variable in it.
 }
 \description{
 The ggplot of a \code{bolasso} is a facet.

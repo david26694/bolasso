@@ -2,8 +2,12 @@
 #'
 #' @details
 #'
-#' - x must be a matrix
-#' - y must be a vector
+#' First, we use rsample to generate bootstrap samples.
+#' Then, bolasso for variable selection.
+#' And finally, ridge regression on the selected variables.
+#' The selected variavbles are the ones appearing more than threshold_selection times and
+#' that have consistent signs (that is, when selected, the sign of the coefficient is always
+#' the same).
 #'
 #' @param predictors A numeric tibble of predictors.
 #' @param outcome A tibble with outcome

@@ -1,6 +1,8 @@
 #' Fit a `bolasso`
 #'
-#' `bolasso()` fits a model.
+#' `bolasso()` applies bolasso to dataset. Bolasso is a feature selection technique
+#' that applies lasso for feature to different bootstrap samples of the dataset, and
+#' then keeps the features that are selection most of the time.
 #'
 #' @param x Depending on the context:
 #'
@@ -23,7 +25,7 @@
 #' @param formula A formula specifying the outcome terms on the left-hand side,
 #' and the predictor terms on the right-hand side.
 #'
-#' @param ... Not currently used, but required for extensibility.
+#' @param ... Most importantly, n_bootsraps, threshold_selection, and ... of cv.glmnet.
 #'
 #' @return
 #'
